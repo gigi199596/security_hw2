@@ -1,0 +1,20 @@
+CREATE DATABASE website;
+USE website;
+CREATE TABLE users(login VARCHAR(15) NOT NULL, password VARCHAR(30) NOT NULL, mail VARCHAR(50));
+INSERT INTO users
+VALUES ('gigi199596', 'lovethatcomputer', 'bajart.gilles@gmail.com'),
+('darkgirl', 'hellokitty', 'lucy.stranger@gmail.com'),
+('snoopy3', 'ilovemycatsosomuch', 'marie.deleu@hotmail.fr'),
+('bobthedreamer', 'tomorrowland', 'bob.dadil@msn.com'),
+('vfeyens', 'imarealgeekforever', 'feyens.victor@live.be');
+
+
+
+commandes:
+	mysql -u root -p (just press enter to skip password)
+	en sudo:
+	a2enmod php5
+	systemctl restart apache2
+
+links:
+https://www.w3schools.com/sql/sql_injection.asp
