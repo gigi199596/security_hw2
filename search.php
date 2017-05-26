@@ -1,7 +1,7 @@
 <?php
 	if($_GET['text']!= null){
         echo '<br>';
-		exec("./search.c ".$_GET['text']);
+		exec("search".$_GET['text']);
 		echo "This is your text: ".$_GET['text'];
 	}else{
 		echo "Search anything u want here : ";
