@@ -1,8 +1,8 @@
 <?php
 	if($_GET['text']!= null){
-        echo '<br>';
-		exec("search".$_GET['text']);
-		echo "This is your text: ".$_GET['text'];
+		exec("./search ".$_GET['text']);
+		echo '<br>';
+		echo "U looked for : ".$_GET['text'];
 	}else{
 		echo "Search anything u want here : ";
 	}
@@ -13,8 +13,26 @@
 		<input id="password" type="hidden" name="psw" placeholder="Password" value=<?=$_GET['psw']?>>
 		<button type="submit" href="" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-search"></i> Search</button>
 	</form>
-<?php 
-	echo "last searchs : <br>";
-	$historic = file_get_contents("historic.txt");
-	echo $historic;
-?>
+<br>
+<br>
+<i class="glyphicon glyphicon-tag"> Last searchs u made : <br>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th> <i class="glyphicon glyphicon-bookmark"> </th>
+			<th> Search </th>
+		</tr>
+	</thead>
+	<tbody>	
+		<?php 
+		foreach (file('historic.txt') as $line){
+			echo "<tr>";
+			echo "<td> <i class=\"glyphicon glyphicon-pencil\"> </td>";
+			echo "<td>";
+				echo $line;
+			echo "</td>";
+			echo "</tr>";
+		}
+		?>
+	</tbody>
+</table>

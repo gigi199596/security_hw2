@@ -3,7 +3,6 @@
                 <title> Homepage </title>
         </head>
         <body>
-                <p> you are connected </p>
                 <div id="particles"></div>
 
                 <svg id="svg-source" height="0" version="1.1"
