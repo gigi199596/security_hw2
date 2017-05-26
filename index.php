@@ -41,8 +41,8 @@
                                                     include 'login.php';
                                             }else{
                                                     echo "successfull";
-                                                    include 'search.php';
                                                     include 'homepage.php';
+                                                    include 'search.php';
                                                     //header("HTTP/1.1 200 OK");
                                                     //header ("Location: homepage.php");
                                             }

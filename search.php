@@ -7,6 +7,7 @@
 	}else{
 		echo "Search anything u want here : ";
 	}
+include 'homepage.php';
 ?>
 	<form class="form-horizontal" method="GET">
 		<input type="text" class="form-control" name="text" value="your search here" placeholder="Search" >
@@ -17,6 +18,7 @@
 <br>
 <br>
 <i class="glyphicon glyphicon-tag"> Last searchs u made : <br>
+<div>
 <table class="table table-hover">
 	<thead>
 		<tr>
@@ -37,3 +39,4 @@
 		?>
 	</tbody>
 </table>
+	</div>
