@@ -13,7 +13,7 @@ VALUES ('gigi199596', 'lovethatcomputer', 'bajart.gilles@gmail.com'),
 commandes:
 	mysql -u root -p (just press enter to skip password)
 	en sudo:
-	a2enmod php5
+	a2enmod php7.0
 	systemctl restart apache2
 
 links:
