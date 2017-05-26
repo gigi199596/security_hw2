@@ -1,7 +1,7 @@
 /*
         this code is used to process the query
 */
-#pragma check_stack(off)   //turn off stack security
+//#pragma check_stack(off)   //turn off stack security
 
 #include <string.h>
 #include <stdio.h>
@@ -15,18 +15,17 @@ int process(const char* input)
     int clear = 0;
 
     strcpy(buf, input);
-    int x;
+    /*int x;
     for( x = 0; x < 10; x++ ){
         printf("%c", buf[x]);
     }
     printf("\n");
-    printf("%d\n", clear);
+    printf("%d\n", clear); */
     int ret = strcmp(buf, "CLEARHISTO");
     if(ret == 0){
         clear = 1;
     }
     if (clear){
-
         clear_historic();
     }else{
         fp = fopen("historic.txt", "a");
@@ -46,8 +45,9 @@ void clear_historic()
     int res = remove("historic.txt");
     if (res == -1){
         printf("ERROR: Historic not deleted!\n");
+    }else{
+        printf("Historic deleted!\n");
     }
-    printf("Historic deleted!\n");
 }
 
 int main(int argc, char* argv[])
