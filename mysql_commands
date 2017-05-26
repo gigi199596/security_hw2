@@ -13,7 +13,7 @@ VALUES ('gigi199596', 'lovethatcomputer', 'bajart.gilles@gmail.com'),
 commandes:
 	mysql -u root -p (just press enter to skip password)
 	en sudo:
-	a2enmod php5
+	a2enmod php7.0
 	systemctl restart apache2
 
 links:
@@ -25,3 +25,16 @@ php-mysql
 php7.0
 mysql-server
 
+
+Pour compiler le buffer overflow:
+That's a good problem. In order to solve that problem you will also have to disable ASLR otherwise the address of g() will be unpredictable.
+
+Disable ASLR:
+
+sudo bash -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
+Disable canaries:
+
+gcc overflow.c -o overflow -fno-stack-protector
+After canaries and ASLR are disabled it should be a straight forward attack like the ones described in Smashing the Stack for Fun and Profit
+
+http://insecure.org/stf/smashstack.html

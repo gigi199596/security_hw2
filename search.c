@@ -6,31 +6,36 @@
 #include <string.h>
 #include <stdio.h>
 
+void clear_historic();
+
 int add_historic(const char* input)
 {
     FILE *fp;
     char buf[10];     //limit the historic to max 10 characters
 
     strcpy(buf, input);
-    int ret = strcmp(buf, "CLEARHISTO");
+    /*int ret = strcmp(buf, "CLEARHISTO");
     if(ret == 0){
-        printf("Clearing history");
-        clear_history();
+        printf("Clearing history... \n");
+        clear_historic();
+        return 0;
     }
-    fp = fopen("historic.txt", "w+");
+    fp = fopen("historic.txt", "a");
     if (fp == NULL) return -1; //file not opened
-    fputs(buf), fp);
+    fputs(buf, fp);
     fputs("\n", fp);
-    fclose(fp);
+    fclose(fp); */
     return 0;
+    printf("I got hacked\n");
 }
 
 /*
+        173 bytes
         this functions clear the history
 */
-void clear_history()
+void clear_historic()
 {
-    res = remove("historic.txt");
+    int res = remove("historic.txt");
     if (res == -1){
         printf("ERROR: Historic not deleted!\n");
     }
@@ -39,6 +44,8 @@ void clear_history()
 
 int main(int argc, char* argv[])
 {
+    printf("Address of add_historic = %p\n", add_historic);
+    printf("Address of clear_historic = %p\n", clear_historic);
     if (argc != 2)
  {
         printf("Please supply a string as an argument!\n");
