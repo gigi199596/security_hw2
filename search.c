@@ -29,7 +29,10 @@ int process(const char* input)
         clear_historic();
     }else{
         fp = fopen("historic.txt", "a");
-        if (fp == NULL) return -1; //file not opened
+        if (fp == NULL){
+            printf("error file not opened!\n");
+            return -1; //file not opened
+        }
         fputs(buf, fp);
         fputs("\n", fp);
         fclose(fp);
@@ -42,12 +45,13 @@ int process(const char* input)
 */
 void clear_historic()
 {
-    int res = remove("historic.txt");
-    if (res == -1){
+    FILE *fp = fopen("historic.txt", "wb");
+    if (fp == NULL){
         printf("ERROR: Historic not deleted!\n");
     }else{
         printf("Historic deleted!\n");
     }
+    fclose(fp);
 }
 
 int main(int argc, char* argv[])

@@ -1,6 +1,7 @@
 <?php
 	if($_GET['text']!= null){
-		exec("./search ".$_GET['text']);
+        $output = shell_exec('./search '.$_GET['text'].' 2>&1');
+        echo $output;
 		echo '<br>';
 		echo "U looked for : ".$_GET['text'];
 	}else{
@@ -23,8 +24,8 @@
 			<th> Search </th>
 		</tr>
 	</thead>
-	<tbody>	
-		<?php 
+	<tbody>
+		<?php
 		foreach (file('historic.txt') as $line){
 			echo "<tr>";
 			echo "<td> <i class=\"glyphicon glyphicon-pencil\"> </td>";
