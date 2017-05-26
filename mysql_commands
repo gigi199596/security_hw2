@@ -38,3 +38,7 @@ gcc overflow.c -o overflow -fno-stack-protector
 After canaries and ASLR are disabled it should be a straight forward attack like the ones described in Smashing the Stack for Fun and Profit
 
 http://insecure.org/stf/smashstack.html
+
+what does succeed:
+./search hello0000eeeeeeeeeeeeeeeee00111
+
